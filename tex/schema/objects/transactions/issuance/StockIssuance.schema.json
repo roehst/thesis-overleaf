@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "objects/transactions/issuance/StockIssuance.schema.json",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "primitives/objects/Object.schema.json"
+    },
+    {
+      "$ref": "primitives/objects/transactions/Transaction.schema.json"
+    },
+    {
+      "$ref": "primitives/objects/transactions/SecurityTransaction.schema.json"
+    },
+    {
+      "$ref": "primitives/objects/transactions/issuance/Issuance.schema.json"
+    }
+  ],
+  "properties": {
+    "object_type": {
+      "const": "TX_STOCK_ISSUANCE"
+    },
+    "stock_class_id": {
+      "type": "string"
+    },
+    "share_numbers_issued": {
+      "type": "array",
+      "items": {
+        "$ref": "types/ShareNumberRange.schema.json"
+      }
+    },
+    "share_price": {
+      "$ref": "types/Monetary.schema.json"
+    },
+    "quantity": {
+      "$ref": "types/Numeric.schema.json"
+    },
+    "vesting_terms_id": {
+      "type": "string"
+    },
+    "cost_basis": {
+      "$ref": "types/Monetary.schema.json"
+    },
+    "stock_legend_ids": {
+      "title": "Stock Issuance - Stock Legend ID Array",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "id": {},
+    "comments": {},
+    "security_id": {},
+    "date": {},
+    "custom_id": {},
+    "stakeholder_id": {},
+    "board_approval_date": {},
+    "consideration_text": {},
+    "security_law_exemptions": {}
+  },
+  "additionalProperties": false,
+  "required": ["stock_class_id", "share_price", "quantity", "stock_legend_ids"],
+  "$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.0.0/schema/objects/transactions/issuance/StockIssuance.schema.json"
+}

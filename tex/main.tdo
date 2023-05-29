@@ -1,0 +1,32 @@
+\contentsline {todo}{Since in the research questions I have already given more specific results what we might expect, I can be more specific above}{2}{section*.6}%
+\contentsline {todo}{In item 4, we have good references to quote from Ammans and Offutt, and we can also quote from the Alloy book}{3}{section*.7}%
+\contentsline {todo}{This is very powerful and must be emphasized elsewhere}{3}{section*.8}%
+\contentsline {todo}{Bring a wealth of quotes from the media, showing how LLMs are exploding, and adding a more methodological note that events are unfolding as this is written}{3}{section*.9}%
+\contentsline {todo}{Complete this section with the organization of the thesis, after the rest of the thesis is written.}{3}{section*.10}%
+\contentsline {todo}{Show how transactions can create securities, and how cancellations and transfers use a balancing security to allow partial cancellations and partial transfers, as a chain of transactions}{19}{section*.21}%
+\contentsline {todo}{Figure in tikz showing one output entering a box with two outputs}{19}{section*.22}%
+\contentsline {todo}{Give a picture of transactions as inputs coming in, outputs coming out, and outputs are balancing and resulting securities}{19}{section*.23}%
+\contentsline {todo}{Give the transactions for the vesting systems}{20}{section*.24}%
+\contentsline {todo}{types and enums involved in vesting transactions}{20}{section*.25}%
+\contentsline {todo}{Show the composition of vesting terms, vesting conditions and vesting triggers}{20}{section*.26}%
+\contentsline {todo}{Argue that this is a domain-specific language embedded in the OCF}{20}{section*.27}%
+\contentsline {todo}{Give the examples that appear in the OCF website}{20}{section*.28}%
+\contentsline {todo}{Show how quantities can be modelled using fractions and etc, show a few of the date types and rounding enums}{20}{section*.29}%
+\contentsline {todo}{Give the transactions for the conversion systems}{20}{section*.30}%
+\contentsline {todo}{types and enums involved in conversion transactions}{20}{section*.31}%
+\contentsline {todo}{Show how conversion always means consuming a security in exchange for another in another class, still respecting security tracing}{21}{section*.32}%
+\contentsline {todo}{Show how complex it is to define the rules for conversion, because they carry uncertainty \- convertible debt can convert into equity at a given ratio but also convert into a fixed percentage of the company's ownership, regardless of the valuation}{21}{section*.33}%
+\contentsline {todo}{Cite domain-driven design from eric evans and vaughn vernon}{21}{section*.34}%
+\contentsline {todo}{Cite event sourcing from martin fowler}{21}{section*.35}%
+\contentsline {todo}{Cite BitCoin's unspent transaction outputs}{21}{section*.36}%
+\contentsline {todo}{Give simple examples that the OCF accepts but should reject}{22}{section*.37}%
+\contentsline {todo}{Give appendix for a network analysis that gives the components described above as strongly connected components.}{22}{section*.38}%
+\contentsline {todo}{Give a more precise description of the relationship between model and meta-model in Alloy}{27}{section*.39}%
+\contentsline {todo}{Perhaps the disj modifier here is superfluous}{37}{section*.45}%
+\contentsline {todo}{Colocar as contribuições no check de transações, aritméticos, vesting, etc.}{45}{section*.52}%
+\contentsline {todo}{I should give that while Alloy is not particularly hard to use after learning, it is certainly not within the reach of any programmer \- after all it still requires a certain knowledge of set theory, relations and first order logic, beyond a basic grasp of how SAT solvers are used.}{45}{section*.53}%
+\contentsline {todo}{We chose not to use temporal logic in our model, even though it is supported by Alloy since version 6 to keep the model simpler \- but it required some gadgetry to simulate the passage of time.}{45}{section*.54}%
+\contentsline {todo}{Give that LLM models are becoming very important and Alloy provides a way to succintly encode models and verify data over domains with a lot of subtlety, and Alloy prompts seem to work very well with ChatGPT versions 3.5 onwards without any fine-tuning, and can be suprising with finetuning}{45}{section*.55}%
+\contentsline {todo}{Alloy has a Java API that could be leveraged into a web-based editor that could bring such a useful technology much closer to developers. A SDK for embedding the Alloy Analyzer into other applications would also be very useful for open source contributors to explore code generation.}{45}{section*.56}%
+\contentsline {todo}{A temporal model based on our model could be used to specify a complete server for managing captables that by construction follows a specification using event driven architectures}{45}{section*.57}%
+\contentsline {todo}{Conclusion should be ambitious and show how exploring a domain model was much richer and ultimately leads to a better understanding of the domain, and hopefully better software for society.}{45}{section*.58}%

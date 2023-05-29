@@ -1,0 +1,464 @@
+\chapter{Open Cap Table Format}
+
+The Open Cap Table format is composed of 143 JSON Schema documents, which are organized in 8 files.  The files are organized in a directory structure, which is shown below. Thus the files package objects defined in the JSON Schemas.
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+    \hline
+    \textbf{Files (total 8)}
+    \begin{itemize}
+    \item Issuers file
+    \item Manifest file
+    \item Stakeholders file
+    \item Stock classes file
+    \item Stock legend templates file
+    \item Stock option plans file
+    \item Transactions file
+    \item Vesting terms file
+    \end{itemize}
+      &   
+    \textbf{Schemas (total 143)}
+    \begin{itemize}
+    \item Types
+    \item Enums
+    \item Objects
+    \end{itemize} \\
+    \hline
+\end{tabular}
+
+\noindent Our work is based on commit \verb|20f3ede62d1f5bdbef16ae1edfa98c34fbda2610|, from 2022-Dec-30.
+
+\section{Objects, Types, and Enums}
+
+In this section, we will explore the different categories within the data model, including objects, types, and enums. Each category plays a distinct role and contributes to the overall structure and functionality of the model.
+
+\subsection{Types}
+
+The \texttt{types} directory contains schema files that define various types used in the model. These types serve as the foundation for creating structured data elements within the model. They define the format and constraints for specific data elements, ensuring consistency and integrity.
+
+For example, the \texttt{Numeric.schema.json} file defines the type for numeric values, while the \texttt{Date.schema.json} file defines the type for representing dates. Other types may include addresses, monetary values, fractions, and more. These types not only provide the structure for the data but also enable validation by specifying required properties and data formats.
+
+A useful type, for example, is the Monetary type. It defines a Monetary value as document with a Numeric value and a Currency Code value:
+
+\begin{listing}[!h]
+\begin{minted}{json}
+{
+  "\$schema": "http://json-schema.org/draft-07/schema",
+  "\$id": "https://opencaptablecoalition.com/schema/types/Monetary.schema.json",
+  "title": "Type - Monetary",
+  "description": "Type representation of an amount of money in a specified currency",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "description": "Numeric amount of money",
+      "\$ref": "https://opencaptablecoalition.com/schema/types/Numeric.schema.json"
+    },
+    "currency": {
+      "description": "ISO 4217 currency code",
+      "\$ref": "https://opencaptablecoalition.com/schema/types/CurrencyCode.schema.json"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["amount", "currency"],
+  "\$comment": "Copyright © 2022 Open Cap Table Coalition (https://opencaptablecoalition.com) / Original File: https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF/tree/v1.0.0/schema/types/Monetary.schema.json"
+}
+\end{minted}
+\caption{The Monetary type}
+\label{lst:monetary}
+\end{listing}
+
+
+\subsection{Enums}
+
+The \texttt{enums} directory contains schema files that define enumerations within the model. Enums are used to represent a predefined set of values or options for specific properties. They provide a limited and consistent set of choices that can be assigned to certain attributes within objects.
+
+For instance, the \texttt{TerminationWindowType.schema.json} file defines different types of termination windows, such as "Termination for Cause" or "Termination without Cause." Enums help to standardize and control the possible values for specific attributes, ensuring data consistency and providing a clear set of options to choose from.
+
+\begin{listing}[!h]
+\begin{minted}{json}
+{
+"$schema": "http://json-schema.org/draft-07/schema",
+"$id": "https://opencaptablecoalition.com/schema/enums/TerminationWindowType.schema.json",
+"title": "Enum - Termination Window Type",
+"description": "Enumeration of termination window types",
+"type": "string",
+"enum": [
+  "VOLUNTARY\_OTHER",
+  "VOLUNTARY\_GOOD\_CAUSE",
+  "VOLUNTARY\_RETIREMENT",
+  "INVOLUNTARY\_OTHER",
+  "INVOLUNTARY\_DEATH",
+  "INVOLUNTARY\_DISABILITY",
+  "INVOLUNTARY\_WITH\_CAUSE"
+],
+}
+\end{minted}
+\caption{The Termination Window Type enum}
+\label{lst:termination-window-type-enum}
+\end{listing}
+
+
+\subsection{Objects}
+
+The \texttt{objects} category represents the entities or concepts within the data model. Objects are composed of properties, which describe the attributes or characteristics of the entity they represent. Examples of objects include issuers, stakeholders, securities, and transactions.
+
+Objects serve as the core components of the model, encapsulating both the data and behavior related to specific entities. They allow for the representation of real-world concepts and enable the modeling of relationships and interactions between different entities.
+
+As an example, we show the Issuer type (abriged):
+
+\begin{listing}[!h]
+\begin{minted}{json}
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://opencaptablecoalition.com/schema/objects/Issuer.schema.json",
+    "title": "Object - Issuer",
+    "description": "Object describing the issuer of the cap table (the company whose cap table this is)",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "https://opencaptablecoalition.com/schema/primitives/objects/Object.schema.json"
+        }
+    ],
+    "properties": {
+        "object_type": {
+            "const": "ISSUER"
+        },
+        "tax_ids": {
+            "title": "Issuer - Tax ID Array",
+            "description": "The tax ids for this issuer company",
+            "type": "array",
+            "items": {
+                "$ref": "https://opencaptablecoalition.com/schema/types/TaxID.schema.json"
+            }
+        },
+        "email": {
+            "description": "A work email that the issuer company can be reached at",
+            "$ref": "https://opencaptablecoalition.com/schema/types/Email.schema.json"
+        },
+        "phone": {
+            "description": "A phone number that the issuer company can be reached at",
+            "$ref": "https://opencaptablecoalition.com/schema/types/Phone.schema.json"
+        },
+        "address": {
+            "description": "The headquarters address of the issuing company",
+            "$ref": "https://opencaptablecoalition.com/schema/types/Address.schema.json"
+        },
+        "id": {},
+        "comments": {}
+    },
+    "required": ["legal_name", "formation_date", "country_of_formation"],
+}
+\end{minted}
+\caption{The Issuer object}
+\label{lst:issuer-object-json-schema}
+\end{listing}
+
+
+By understanding the distinctions between objects, types, and enums, we gain a clearer perspective on the overall structure and purpose of the data model. These categories work together to define the data elements, provide validation, restrict attribute values, and represent the entities within the model.
+
+\section{File Structure}
+\subsection{OCF Manifest File}
+
+The \texttt{OCF Manifest File} packages all data in a single artifact (a JSON file). Indeed, the OCF represents a data model, that is kept in files, which are collections of JSON documents. It is this file that is to be exchanged by the parties involved in the transactions.
+
+The \texttt{OCFManifestFile} contains the following components:
+
+\begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{File}               & \textbf{Description}                      \\ \hline
+    Issuer                      & The issuer of the securities.             \\ \hline
+    Stakeholders file           & A file containing stakeholders.           \\ \hline
+    Stock classes file          & A file containing stock classes.          \\ \hline
+    Stock legend templates file & A file containing stock legend templates. \\ \hline
+    Stock plans file            & A file containing stock plans.            \\ \hline
+    Transactions file           & A file containing transactions.           \\ \hline
+    Valuations file             & A file containing valuations.             \\ \hline
+    Vesting terms file          & A file containing vesting terms.          \\ \hline
+\end{tabular}
+
+\subsection{Stakeholders File}
+
+Contains stakeholders, which are persons or organizations that own securities. Stakeholders are assigned to securities in issuance transactions.
+
+\subsection{Stock Classes}
+
+Contains stock classes, which are types of securities. Stock classes can be preferred or common. Preferred stock classes gives the stakeholder certain rights, and preferred stock securities can usually be converted to common stock securities.
+
+\subsection{Stock Legend Templates}
+
+Contains stock legend templates, which are templates for stock legends. Stock legends are text that is printed on the stock certificate.
+
+\subsection{Stock Plans}
+
+Contains stock plans, which are pools for granting stock options to employees. Stock options give the right but not the obligation to buy a certain amount of stock at a certain price, and as the stock appreciates, the stock options become more valuable. Stock option plans are a key instrument in startup financing.
+
+\subsection{Transactions File}
+
+Contains transactions, which can be initial, non-terminal and terminal. Initial transactions are transactions that create securities. Non-terminal transactions are transactions that accept or adjust securities, including vesting events and exercises. If a non-terminal transaction generates a security, a matching initial transaction must be present. Terminal transactions are transactions that terminate securities, including sales and transfers.
+
+\begin{tabular}{|l|c|c|c|c|}
+    \hline
+    \textbf{Transaction Type}       & \textbf{Convertible} & \textbf{PlanSecurity} & \textbf{Stock} & \textbf{Warrant} \\
+    \hline
+    Acceptance                      & Yes                  & Yes                   & Yes            & Yes              \\
+    \hline
+    Cancellation                    & Yes                  & Yes                   & Yes            & Yes              \\
+    \hline
+    ClassAuthorizedSharesAdjustment &                      &                       & Yes            &                  \\
+    \hline
+    ClassConversionRatioAdjustment  &                      &                       & Yes            &                  \\
+    \hline
+    ClassSplit                      &                      &                       & Yes            &                  \\
+    \hline
+    Conversion                      & Yes                  &                       & Yes            &                  \\
+    \hline
+    Exercise                        &                      & Yes                   &                & Yes              \\
+    \hline
+    Issuance                        & Yes                  & Yes                   & Yes            & Yes              \\
+    \hline
+    PlanPoolAdjustment              &                      &                       & Yes            &                  \\
+    \hline
+    Reissuance                      &                      &                       & Yes            &                  \\
+    \hline
+    Release                         &                      & Yes                   &                &                  \\
+    \hline
+    Repurchase                      &                      &                       & Yes            &                  \\
+    \hline
+    Retraction                      & Yes                  & Yes                   & Yes            & Yes              \\
+    \hline
+    Transfer                        & Yes                  & Yes                   & Yes            & Yes              \\
+    \hline
+\end{tabular}
+
+\subsection{Valuations}
+
+Contains valuations, which are observations of the value of the company. Valuations are used to calculate the value of securities.
+
+\subsection{Vesting Terms}
+
+Contains vesting terms, which are the representation of legal documents that define schedules for vesting events. Vesting events are events that cause securities to vest, which means that the securities become unrestricted and can be sold or transferred.
+
+Vesting terms form a small domain-specific language for describing vesting schedules. The OCF can model both event-based vesting and time-based vesting. Event-based vesting is when vesting events are triggered by events, such as the company being acquired. Time-based vesting is when vesting events are triggered by time, such as the passage of time.
+
+\section{Tracing Security Transactions}
+
+In this section, we will explore the process of tracing security transactions within the data model. Tracing security transactions is crucial for accurately tracking the ownership and movement of securities throughout their lifecycle.
+
+The case below shows the story of a single security, as traced by the transactions:
+
+\begin{enumerate}\label{list:transactions}
+	\item Issuance Event: 1,000 shares of preferred stock are issued to Bob (generates a new security id)
+	\item Acceptance Event: Bob accepts the shares (refers to the security id generated in transaction 1)
+	\item Conversion Event: Bob converts 500 shares to common stock (refers to the security id generated in transaction 1)
+	      \subitem Since this is a partial transaction, beyond issuing a security for 500 shares of common stock, we must issue new preferred stock for the remaining 500 shares as well.
+	\item \begin{enumerate}
+	\item Issuance Event: 500 shares of common stock are issued to Bob (a new security id is generated)
+	\item Issuance Event: 500 shares of preferred stock issued to Bob (a new security id is generated)
+\end{enumerate}
+\item Transfer Event: Bob transfers 500 shares of preferred stock to Alice
+\subitem Again, this is a partial transaction, so we must issue new preferred stock for the remaining 500 shares as well.
+\item \begin{enumerate}
+\item Issuance Event: 500 shares of preferred stock are issued to Frank (a new security id is generated)
+\item Issuance Event: 500 shares of preferred stock issued to Bob (a new security id is generated)
+\end{enumerate}
+\item Repurchase Event: Issuer repurchases 500 shares of common stock from Bob (This is a complete transaction, so no new security id is generated)
+\end{enumerate}
+
+Each of those transactions has a \verb|security_id| field. Securities, in the OCF, are correlation identifiers for tracing transactions. By querying the transactions file for all transactions refering to a given security id, we can trace the history of a security.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{listing}[!h]
+\begin{minted}{json}
+{
+	"$id": "objects/transactions/issuance/StockIssuance.schema.json",
+	"type": "object",
+	"allOf": [
+		{
+		"$ref": "primitives/objects/Object.schema.json"
+		},
+		{
+		"$ref": "primitives/objects/transactions/Transaction.schema.json"
+		},
+		{
+		"$ref": "primitives/objects/transactions/SecurityTransaction.schema.json"
+		},
+		{
+		"$ref": "primitives/objects/transactions/issuance/Issuance.schema.json"
+		}
+	],
+	"properties": {
+		"object_type": {
+		"const": "TX_STOCK_ISSUANCE"
+		},
+		"stock_class_id": {
+		"type": "string"
+		},
+		"share_numbers_issued": {
+		"type": "array",
+		"items": {
+			"$ref": "types/ShareNumberRange.schema.json"
+		}
+		},
+		"share_price": {
+		"$ref": "types/Monetary.schema.json"
+		},
+		"quantity": {
+		"$ref": "types/Numeric.schema.json"
+		},
+		"vesting_terms_id": {
+		"type": "string"
+		},
+		"cost_basis": {
+		"$ref": "types/Monetary.schema.json"
+		},
+		"stock_legend_ids": {
+		"type": "array",
+		"items": {
+			"type": "string"
+		}
+		},
+		"id": {},
+		"comments": {},
+		"security_id": {},
+		"date": {},
+		"custom_id": {},
+		"stakeholder_id": {},
+		"board_approval_date": {},
+		"consideration_text": {},
+		"security_law_exemptions": {}
+	},
+	"additionalProperties": false,
+	"required": [
+		"stock_class_id",
+		"share_price",
+		"quantity",
+		"stock_legend_ids"
+	]
+}
+\end{minted}
+\caption{Stock Issuance Transaction}
+\label{listing:stockissuance-transaction-json-schema}
+\end{listing}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Transactions might also have two additional fields: \verb|balancing_security _id| and \verb|resulting_security_ids|. Partial transactions such as partial cancellations and partial transfers effectively destroy the original security, and balances are kept in a new balancing security. Transfers also create new securities, so they have a \verb|resulting_security_ids| field.
+
+\todo{Show how transactions can create securities, and how cancellations and transfers use a balancing security to allow partial cancellations and partial transfers, as a chain of transactions}
+
+Thus the general form of a transaction, in the OCF, is:
+
+\todo{Figure in tikz showing one output entering a box with two outputs}
+
+\todo{Give a picture of transactions as inputs coming in, outputs coming out, and outputs are balancing and resulting securities}
+
+Here limitations of JSON Schema appear: 
+  
+
+\textbf{Thus, in principle, the transaction tracing system which is a key enabler of auditability, can not be validated completely within the current implementation in JSON Schema.}
+
+\begin{tabular}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Constraint}                                & \textbf{Explanation}                                                                                                                                                                                                           \\
+\hline
+Ordering of transactions                           & Transactions must appear in a certain order and must be linked by their security ids. JSON Schema cannot express this constraint, at least not naturally\footnotemark.                                                         \\
+\hline
+Balancing of transactions                          & The sum of shares entering and exiting a transaction must be balanced. JSON Schema can not perform arithmetic checks.                                                                                                          \\
+\hline
+(Non-)cyclicality of the implied transaction graph & More subtly, the graph formed by transactions can not be checked for cycles. This is a problem because cycles in the graph of transactions would mean that a security is being created out of thin air, which is not possible. \\
+\hline
+\end{tabular}
+\footnotetext{We have not ruled out the possibility that such constraint could be encoded in JSON Schema some how.}
+
+\section{Vesting Terms}
+
+In this section, we show how the vesting terms define the conditions and schedules for the gradual vesting of securities. Here, the OCF is immensely valuable for accomodating the complexity of vesting terms, which are usually defined in legal documents.
+
+\subsection{Vesting transactions}
+
+\noindent\todo{Give the transactions for the vesting systems}
+\subsection{Vesting objects, types and enums}
+
+\noindent\todo{types and enums involved in vesting transactions}
+
+\subsection{The DSL embedded in the vesting system}
+
+\noindent\todo{Show the composition of vesting terms, vesting conditions and vesting triggers}
+
+\todo{Argue that this is a domain-specific language embedded in the OCF}
+
+\textbf{This is clearly a (proto-)domain specific language for vesting terms, which is embedded in the OCF. As we will develop in the following chapters, this idea of a DSL can be expanded to accomodate even more complex vesting terms, by introducing propositional logic operators and more date operators.}
+
+\todo{Give the examples that appear in the OCF website}
+
+\subsection{Useful types and enums in the vesting system}
+
+Beyond the way that the vesting terms compose, the OCF also provides useful types for specifying dates, rounding methods and quantities that can be given as percentages, fractions or absolute values.
+
+\todo{Show how quantities can be modelled using fractions and etc, show a few of the date types and rounding enums}
+
+\section{Conversion Mechanisms}
+
+In this section, we show how conversion mechanisms enable the transformation of securities from one type to another, which usually involves either the conversion of preferred stock into common or the conversion of debt into equity.
+
+\subsection{Conversion transactions}
+
+\noindent\todo{Give the transactions for the conversion systems}
+
+\subsection{Conversion objects, types and enums}
+
+\noindent\todo{types and enums involved in conversion transactions}
+
+\subsection{The conversion process}
+
+\todo{Show how conversion always means consuming a security in exchange for another in another class, still respecting security tracing}
+
+\todo{Show how complex it is to define the rules for conversion, because they carry uncertainty \- convertible debt can convert into equity at a given ratio but also convert into a fixed percentage of the company's ownership, regardless of the valuation}
+
+\section{Evaluation of the Data Model}
+
+\subsection{Review of the building blocks}
+
+In this chapter, we showed how the OCF is based upon:
+
+\begin{itemize}
+	\item \textbf{Transactions} and their tracing, which are the basic operations that can be performed on securities;
+	\item \textbf{Vesting terms}, which are the representation of legal documents that define schedules for vesting events;
+	\item \textbf{Conversion mechanisms}, which are the rules for converting securities from one type to another.
+\end{itemize}
+
+That are built on the following basic blocks:
+
+\begin{itemize}
+	\item \textbf{Objects}, \textbf{types} and \textbf{enums}, which are the basic building blocks of the data model;
+	\item \textbf{Files}, which are collections of JSON documents that are exchanged between parties;
+\end{itemize}
+
+\subsection{Design patterns}
+
+\begin{enumerate}
+	\item The use of objects and types is similar to the use of entities and values in domain-driven design\todo{Cite domain-driven design from eric evans and vaughn vernon}
+	\item The modeling of securities as correlation identifiers is similar to the use of correlation identifiers in event sourcing\todo{Cite event sourcing from martin fowler}
+	\item The consuming and producing of securities in transactions is somewhat similar to BitCoin's unspent transaction outputs (UTXO)\todo{Cite BitCoin's unspent transaction outputs} where every transaction consumes a set of UTXOs and produces a set of UTXOs, similar to how transactions consume securities and produce resulting securities and balancing securities
+\end{enumerate}
+
+\subsection{Advantages and achievements of the OCF}
+
+We see OCF as incredibly valuable given how much knowledge it gathers in a single specification. The choice of design patterns results in a data model that can fulfill the requirements of auditability (particulary regarding transaction tracing) and flexibility (via the domain-specific languages implicit in the vesting and conversion systems).
+
+\subsection{Disadvantages and limitations of the OCF}
+
+The choice of JSON Schema can arguably be defended on the grounds that it is widespread, easy to use and can validate data, by its purpose. However, we believe that the use of JSON Schema is a limitation of the OCF.
+
+JSON Schema fails to express invariants of the system. The JSON Schema itself is not able to distinguish wrong transaction traces from correct ones. In fact, the samples given in the repository are given only syntactically correct. The documents in the samples are well-formed, so to say. But they are not semantically correct. Examples are trivial.
+
+\todo{Give simple examples that the OCF accepts but should reject}
+
+\section{Next steps}
+
+In the next chapter, we will explore how certain parts of the OCF can be modeled in Alloy with a much higher degree of precision and expressiveness.
+
+\noindent\todo{Give appendix for a network analysis that gives the components described above as strongly connected components.}
+

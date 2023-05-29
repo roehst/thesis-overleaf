@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{fact}\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{k}{no}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{IssuanceTransaction}
+\PYG{o}{|}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{.}\PYG{n}{security\PYGZus{}id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{j}\PYG{o}{.}\PYG{n}{security\PYGZus{}id}\PYG{+w}{ }\PYG{o+ow}{and}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{.}\PYG{n}{id}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{j}\PYG{o}{.}\PYG{n}{id}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,69 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: cover.aux
+A level-1 auxiliary file: introduction.aux
+A level-1 auxiliary file: background.aux
+A level-1 auxiliary file: ocf.aux
+A level-1 auxiliary file: alloy.aux
+A level-1 auxiliary file: tt.aux
+A level-1 auxiliary file: sop.aux
+A level-1 auxiliary file: vs.aux
+A level-1 auxiliary file: conclusion.aux
+The style file: plain.bst
+Database file #1: main.bib
+Warning--to sort, need author or key in opencaptablecoalitionOpenTable
+Warning--to sort, need author or key in OCTForma62:online
+Warning--to sort, need author or key in jsonschemaImplementations
+Warning--to sort, need author or key in schemastoreJSONSchema
+Warning--to sort, need author or key in Sharewor68:online
+Warning--to sort, need author or key in CartaEqu70:online
+Warning--to sort, need author or key in LTSEHome63:online
+Warning--to sort, need author or key in Software0:online
+Warning--to sort, need author or key in DistuEqu4:online
+Warning--to sort, need author or key in investopediaOptionPool
+Warning--to sort, need author or key in investopediaExerciseDefinition
+Warning--empty journal in Chen2006
+Warning--empty year in Podorozhny
+You've used 23 entries,
+            2118 wiz_defined-function locations,
+            634 strings with 7835 characters,
+and the built_in function-call counts, 5595 in all, are:
+= -- 547
+> -- 209
+< -- 3
++ -- 89
+- -- 66
+* -- 301
+:= -- 861
+add.period$ -- 74
+call.type$ -- 23
+change.case$ -- 101
+chr.to.int$ -- 0
+cite$ -- 36
+duplicate$ -- 227
+empty$ -- 538
+format.name$ -- 66
+if$ -- 1240
+int.to.chr$ -- 0
+int.to.str$ -- 23
+missing$ -- 11
+newline$ -- 119
+num.names$ -- 24
+pop$ -- 197
+preamble$ -- 1
+purify$ -- 79
+quote$ -- 0
+skip$ -- 146
+stack$ -- 0
+substring$ -- 184
+swap$ -- 35
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 90
+warning$ -- 13
+while$ -- 32
+width$ -- 25
+write$ -- 232
+(There were 13 warnings)

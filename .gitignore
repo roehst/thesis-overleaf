@@ -1,0 +1,6 @@
+.history
+_minted-1/
+
+new-tex/*.lof
+new-tex/*.lot
+new-text/_minted*

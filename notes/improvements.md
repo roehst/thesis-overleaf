@@ -1,0 +1,5 @@
+There are two improvements that we can give additionaly to the model:
+
+1. There is an improvement I found that I will propose to the model: the vesting triggers can be represented as a DSL, and by adding logical operators it can be made more expressive. In the original specification, a vesting condition has many triggers and all must be satisfied, but adding logical operators we can express more complex conditions. This earns its own section in the thesis.
+
+2. The second improvement is that transfers can be made more general by taking many inputs and outputs, and that is sufficient to express splits, groupings, cancellations, transfers, issuances etc. This is both surprising, due to the simplicity of it, and expected from the accounting perspective. Not to say it is very similar to Bitcoins' UTXO model.

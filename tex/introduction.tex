@@ -1,0 +1,62 @@
+\chapter{Introduction}
+
+\section{Background and Motivation}
+
+The venture capital market revolves around acquiring financial resources (capital for investment). This capital is invested in startup companies that the investor hopes will be sold for a large profit in the feature. It is an investment modality with high risk, but high returns. 
+
+Startup companies obtain resources in stages that correspond to the progress made in achieving specific milestones. A funding round involves not only the startup itself and the investors, but an ecossystem of law firms, financial advisors and auditing firms. 
+
+The transactions that take place in a funding round are complex, and the resulting data are difficult to maintain and validate. At each point in time in general, and immediately before and after a transaction, there is a relation between investors in the company and the number of shares they own (which might have different classes and rights). For any given company, the set of such relations at a given moment in time is commonly called a capitalization table.
+
+Capitalization tables are typically kept in spreadsheets, and are exchanged frequently during negotiations. Given the limitations of spreadsheets, it is easy to make mistakes when updating them. This introduces risks of legal and financial liability, and can lead to disputes between investors and companies.
+
+Giving the need for mitigating this risks, an ecossystem of software-as-a-service solutions has emerged to help companies manage their capitalization tables. However, these solutions are not interoperable, and there is no standard for exchanging capitalization table data.
+
+The Open Cap Table Coalition\cite{opencaptablecoalitionOpenTable}, a recently formed alliance of key venture capital firms, law firms and software solution providers released what is a candidate for an industry standard for exchanging capitalization table data, known as the Open Cap Table Format\cite{OCTForma62:online} (which we will refer to as OCF). It is an open-source standard described semi-formally as schemas and validation rules for JavaScript Object Notation (JSON) documents. JSON is a popular data interchange format, and is used in many web applications. Specifically, the format follows the JSON Schema standard.
+
+The OCF is a step forward in the direction of making capitalization tables reliable and easy to validate. However, it is not a formal specification, and it is inherently limited by the semantics of JSON Schema. A number of validations that emerge as constraints on the domain model, as we shall see, can not be captured by the semantics of JSON Schema, limiting the application of the format as a base for automated verification of the transactions that build a capitalization table.
+
+\todo{Since in the research questions I have already given more specific results what we might expect, I can be more specific above}
+
+In this thesis, we propose an alternative model for validating capitalization tables and transactions using the Alloy\cite{DJSALLA} language. Alloy is part of what is called lightweight formal methods, which are formal methods that are easier to use and require less training to apply than traditional formal methods (compared to other languages such as Z, B, TLA+)\cite{DJLMF}. It still allows sophisticated analysis of the constructed model. We show that the Alloy model is more expressive and useful than the original JSON Schema, since it is more precise, captures subtle invariants in the problem domain, and can be explored and checked with the Alloy Analyzer, which features model search and bounded model checking. 
+
+\section{Research Questions and Contributions}
+
+In this thesis, we explore the possibilities of using a language designed for formally expressing domains and concepts versus using a language designed for validating data structures. We use Alloy to model capitalization tables and transactions, and compare the results with the original JSON Schema model.
+
+Given this setting, we aim to answer the following questions:
+
+\begin{enumerate}
+	\item Can Alloy be be used to assure that the model holds transactional integrity, that is, can it be used do defined the financial operations and constraints and ensure that they are consistent?
+	\item Can the higher expressivity of Alloy be used to enhance the model's own expressivity, such as support for finer-grained business rules?
+	\item What concepts can be expressed in Alloy that cannot be expressed on JSON Schema but are key for constraining the model to be more consistent with reality?
+	\item Can we evaluate the results of the Alloy model in a way that is useful for the domain experts, and compare them to other forms of assuring correctness and realibity?
+\end{enumerate}
+
+
+\subsection{Contributions}
+
+In investigating the research questions, we make the following contributions:
+
+\begin{enumerate}
+	\item We avoid double-issuances and double-spending of securities, as well as enforcing the correct order of transactions and the DAG-ness of the transaction graph
+	\item We enhance the expressivity of business rules by explicitly modeling the AST that those rules would have if they where depicted as a domain-specific language
+	\item We show how basic accounting equations can be checked for correctness over the resulting model, and how important queries can be specified and checked, such as querying for the complete history for a security, and show that those queries are correct
+	\item We evaluate the output of Alloy Analyzer, that checks the models using a SAT solver, and includes parameters related to the size of the underlying bit-blasted model that can be compared to the coverage of regular unit tests
+\end{enumerate}
+
+\todo{In item 4, we have good references to quote from Ammans and Offutt, and we can also quote from the Alloy book}
+
+Those are all properties that ultimately lie in legal contracts. Thus, our thesis helps bridge the gap between the ambiguities inherent to both natural language and the law, an important step into the development of accurate models of the domain, which is critical if we consider that having accurate and correct conceptual models is of paramount importante now to check the correctness of large language models and generative AI in general.
+
+\todo{This is very powerful and must be emphasized elsewhere}
+
+\todo{Bring a wealth of quotes from the media, showing how LLMs are exploding, and adding a more methodological note that events are unfolding as this is written}
+\section{Thesis Organization}
+
+The remainder of this thesis is organized as follows.
+
+\todo{Complete this section with the organization of the thesis, after the rest of the thesis is written.}
+
+In the appendix, the reader will find full code listings for the Alloy model, and the JSON Schema for the Open Cap Table Format, the grammar and description of JSON Schema and a quick reference for Alloy.
+

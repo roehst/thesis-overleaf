@@ -1,0 +1,133 @@
+\begin{thebibliography}{10}
+
+\bibitem{CartaEqu70:online}
+Carta | equity management solutions.
+\newblock \url{https://carta.com/}.
+\newblock (Accessed on 05/23/2023).
+
+\bibitem{DistuEqu4:online}
+Distu - equity value unlocked.
+\newblock \url{https://www.distu.com.br/}.
+\newblock (Accessed on 05/23/2023).
+
+\bibitem{investopediaExerciseDefinition}
+{E}xercise: {D}efinition and {H}ow {I}t {W}orks {W}ith {O}ptions ---
+  investopedia.com.
+\newblock \url{https://www.investopedia.com/terms/e/exercise.asp}.
+\newblock [Accessed 19-May-2023].
+
+\bibitem{jsonschemaImplementations}
+{I}mplementations --- json-schema.org.
+\newblock \url{https://json-schema.org/implementations.html}.
+\newblock [Accessed 27-May-2023].
+
+\bibitem{schemastoreJSONSchema}
+{J}{S}{O}{N} {S}chema {S}tore --- schemastore.org.
+\newblock \url{https://www.schemastore.org/json/}.
+\newblock [Accessed 27-May-2023].
+
+\bibitem{LTSEHome63:online}
+Ltse | home.
+\newblock \url{https://equity.ltse.com/}.
+\newblock (Accessed on 05/23/2023).
+
+\bibitem{OCTForma62:online}
+Oct format — open cap table coalition.
+\newblock \url{https://www.opencaptablecoalition.com/format}.
+\newblock (Accessed on 05/26/2023).
+
+\bibitem{opencaptablecoalitionOpenTable}
+{O}pen {C}ap {T}able {C}oalition ({O}{C}{T}) --- opencaptablecoalition.com.
+\newblock \url{https://www.opencaptablecoalition.com/}.
+\newblock [Accessed 27-May-2023].
+
+\bibitem{investopediaOptionPool}
+{O}ption {P}ool: {D}efinition, {P}urpose, {H}ow {I}t {W}orks, and {S}tructure
+  --- investopedia.com.
+\newblock \url{https://www.investopedia.com/terms/o/option-pool.asp}.
+\newblock [Accessed 19-May-2023].
+
+\bibitem{Sharewor68:online}
+Shareworks - equity compensation solutions.
+\newblock \url{https://www.shareworks.com/}.
+\newblock (Accessed on 05/23/2023).
+
+\bibitem{Software0:online}
+Software and services to organize africa's startups.
+\newblock \url{https://www.getraise.io/}.
+\newblock (Accessed on 05/23/2023).
+
+\bibitem{Braga2010}
+Bernardo F.~B. Braga, Jo{\~{a}}o Paulo~Andrade Almeida, Giancarlo Guizzardi,
+  and Alessander~B. Benevides.
+\newblock Transforming {OntoUML} into alloy: towards conceptual model
+  validation using a lightweight formal method.
+\newblock {\em Innovations in Systems and Software Engineering}, 6(1-2):55--63,
+  February 2010.
+
+\bibitem{RFC8259}
+T.~Bray.
+\newblock {The JavaScript Object Notation (JSON) Data Interchange Format}.
+\newblock RFC 8259, IETF, December 2017.
+
+\bibitem{Carpio2021}
+Renzo Carpio and Izzat Alsmadi.
+\newblock Websites security policies implementation using alloy analyzer.
+\newblock {\em {SSRN} Electronic Journal}, 2021.
+
+\bibitem{Chen2006}
+Charles Chen, Paul Grisham, Sarfraz Khurshid, and Dewayne Perry.
+\newblock Design and validation of a general security model with the alloy
+  analyzer.
+\newblock 01 2006.
+
+\bibitem{DJLMF}
+Daniel Jackson.
+\newblock Lightweight formal methods.
+\newblock In {\em Proceedings of the International Symposium of Formal Methods
+  Europe on Formal Methods for Increasing Software Productivity}, FME '01,
+  page~1, Berlin, Heidelberg, 2001. Springer-Verlag.
+
+\bibitem{DJSALLA}
+Daniel Jackson.
+\newblock {\em Software Abstractions: Logic, Language, and Analysis}.
+\newblock The MIT Press, 2012.
+
+\bibitem{Johnson2021}
+Jeremy Johnson and Izzat Alsmadi.
+\newblock Formal modeling of banking policies using alloy analyzer.
+\newblock {\em {SSRN} Electronic Journal}, 2021.
+
+\bibitem{500Lines19:online}
+Eunsuk Kang, Santiago Perez De~Rosso, and Daniel Jackson.
+\newblock 500 lines or less - the same-origin policy.
+\newblock \url{https://aosabook.org/en/500L/the-same-origin-policy.html}.
+\newblock (Accessed on 05/23/2023).
+
+\bibitem{Milicevic2017}
+Aleksandar Milicevic, Joseph~P. Near, Eunsuk Kang, and Daniel Jackson.
+\newblock Alloy{$\ast$}: a general-purpose higher-order relational constraint
+  solver.
+\newblock {\em Formal Methods in System Design}, 55(1):1--32, January 2017.
+
+\bibitem{Arby}
+Ido Milicevic, Aleksandar~Erfrati and Daniel Jackson.
+\newblock arby---an embedding of alloy in ruby.
+\newblock In {\em Abstract State Machines, Alloy, B, VDM, and Z}, Lecture Notes
+  in Computer Science. Springer Berlin Heidelberg, 2014.
+
+\bibitem{Pezoa2016}
+Felipe Pezoa, Juan~L. Reutter, Fernando Suarez, Mart{\'{\i}}n Ugarte, and
+  Domagoj Vrgo{\v{c}}.
+\newblock Foundations of {JSON} schema.
+\newblock In {\em Proceedings of the 25th International Conference on World
+  Wide Web}. International World Wide Web Conferences Steering Committee, April
+  2016.
+
+\bibitem{Podorozhny}
+Rodion Podorozhny, Sarfraz Khurshid, Dewayne Perry, and Xiaoqin Zhang.
+\newblock Verification of multi-agent negotiations using the alloy analyzer.
+\newblock In {\em Lecture Notes in Computer Science}, pages 501--517. Springer
+  Berlin Heidelberg.
+
+\end{thebibliography}

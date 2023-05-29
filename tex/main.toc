@@ -1,0 +1,102 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Background and Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Research Questions and Contributions}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Contributions}{3}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Thesis Organization}{3}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Background}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview of Alloy and JSON Schema}{4}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Overview of Alloy}{4}{subsection.2.1.1}%
+\contentsline {subsubsection}{Advantages of Alloy}{5}{section*.11}%
+\contentsline {subsubsection}{Applications of Alloy}{5}{section*.13}%
+\contentsline {subsection}{\numberline {2.1.2}Overview of JSON Schema}{5}{subsection.2.1.2}%
+\contentsline {subsubsection}{Tooling for JSON Schema}{7}{section*.15}%
+\contentsline {subsection}{\numberline {2.1.3}Mapping from JSON Schema to Alloy}{7}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}What are Capitalization Tables?}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Overview of Capitalization Tables}{8}{subsection.2.2.1}%
+\contentsline {subsubsection}{Why are Capitalization Tables Important?}{9}{section*.18}%
+\contentsline {subsubsection}{How are Capitalization Tables Used?}{9}{section*.19}%
+\contentsline {subsection}{\numberline {2.2.2}Examples}{9}{subsection.2.2.2}%
+\contentsline {subsubsection}{Problems in managing capitalization tables}{10}{section*.20}%
+\contentsline {section}{\numberline {2.3}Ecossystem and The Open Cap Table Format}{11}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Open Cap Table Format}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Objects, Types, and Enums}{12}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Types}{13}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Enums}{13}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Objects}{14}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}File Structure}{16}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}OCF Manifest File}{16}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Stakeholders File}{16}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Stock Classes}{16}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Stock Legend Templates}{16}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Stock Plans}{16}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Transactions File}{17}{subsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.2.7}Valuations}{17}{subsection.3.2.7}%
+\contentsline {subsection}{\numberline {3.2.8}Vesting Terms}{17}{subsection.3.2.8}%
+\contentsline {section}{\numberline {3.3}Tracing Security Transactions}{18}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Vesting Terms}{20}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Vesting transactions}{20}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Vesting objects, types and enums}{20}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}The DSL embedded in the vesting system}{20}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Useful types and enums in the vesting system}{20}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Conversion Mechanisms}{20}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Conversion transactions}{20}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Conversion objects, types and enums}{20}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}The conversion process}{21}{subsection.3.5.3}%
+\contentsline {section}{\numberline {3.6}Evaluation of the Data Model}{21}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Review of the building blocks}{21}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Design patterns}{21}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Advantages and achievements of the OCF}{22}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}Disadvantages and limitations of the OCF}{22}{subsection.3.6.4}%
+\contentsline {section}{\numberline {3.7}Next steps}{22}{section.3.7}%
+\contentsline {chapter}{\numberline {4}The Alloy model}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Design of the Model}{24}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Selected features}{25}{subsection.4.1.1}%
+\contentsline {section}{\numberline {4.2}Implementation in Alloy}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Evaluation and Testing of the Model}{26}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Transaction Tracing}{27}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Signatures}{28}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}The Security}{28}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}The Abstract Transaction}{28}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}The Issuance}{28}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}The Cancellation}{29}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}The Transfer}{29}{subsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.1.6}The Stakeholder}{29}{subsection.5.1.6}%
+\contentsline {section}{\numberline {5.2}Constraints}{29}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Requiring that all securities are created by an issuance}{29}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Avoiding cycles}{30}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Constraining the parent-child relationship}{30}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Giving meaningful values to amounts}{30}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Balancing the number of shares}{30}{subsection.5.2.5}%
+\contentsline {section}{\numberline {5.3}Funs, or queries}{31}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Examples}{31}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Discussion}{32}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Stock Option Plan Model}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction}{35}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Model Design}{35}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Signatures}{36}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Stock Plan Signature}{36}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}The Security Signature}{37}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Issuance signature}{37}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Exercise signature}{38}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Vesting Term signature}{38}{subsection.6.3.5}%
+\contentsline {section}{\numberline {6.4}Functions (Queries)}{38}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Constraints}{39}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}All shares must be positive in the signatures}{39}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Relational constraints}{39}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.5.3}Accounting equations}{39}{subsection.6.5.3}%
+\contentsline {chapter}{\numberline {7}Vesting System}{41}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Introduction}{41}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Model Overview: Vesting Terms, Conditions, and Triggers}{41}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Unary and Binary Operators: Until, After, Not, And, and Or}{42}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Unary Operators}{43}{subsection.7.3.1}%
+\contentsline {subsubsection}{Until}{43}{section*.47}%
+\contentsline {subsubsection}{After}{43}{section*.48}%
+\contentsline {subsubsection}{Not}{44}{section*.49}%
+\contentsline {subsection}{\numberline {7.3.2}Binary Operators}{44}{subsection.7.3.2}%
+\contentsline {subsubsection}{And}{44}{section*.50}%
+\contentsline {subsubsection}{Or}{44}{section*.51}%
+\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{45}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Summary of Contributions}{45}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Limitations and Open Issues}{45}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Future Directions for Research and Development}{45}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Conclusion}{45}{section.8.4}%

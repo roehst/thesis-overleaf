@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{sig}\PYG{+w}{ }\PYG{n}{Id}\PYG{+w}{ }\PYG{o}{\PYGZob{}\PYGZcb{}}
+
+\PYG{k+kd}{sig}\PYG{+w}{ }\PYG{n}{Security}\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{n}{id}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{Id}
+\PYG{o}{\PYGZcb{}}
+
+\PYG{k+kd}{sig}\PYG{+w}{ }\PYG{n}{Issuer}\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{n}{id}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{Id}
+\PYG{o}{\PYGZcb{}}
+
+\PYG{k+kd}{sig}\PYG{+w}{ }\PYG{n}{IssuanceTransaction}\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{n}{id}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{Id}\PYG{p}{,}
+\PYG{n}{security\PYGZus{}id}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{Id}\PYG{p}{,}
+\PYG{n}{shares}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{k+kt}{Int}\PYG{p}{,}
+\PYG{n}{issuer\PYGZus{}id}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{Id}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

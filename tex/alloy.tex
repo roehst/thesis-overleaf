@@ -1,0 +1,65 @@
+\chapter{The Alloy model}
+
+\section{Design of the Model}
+
+In this section, we discuss the design of our capitalization table model in detail. Our model is based on the Open Cap Table format, and we discuss the general strategy for the translation and design of our model. 
+
+We migrate objects and transactions as Alloy signatures, and add constraints and queries to the model to capture the invariants of the problem domain and show how certain information can be extracted from the model. Those invariants are implied either by the author's business expertise or by the validations defined in JSON Schema. 
+
+We do not migrate parts of the model that contribute little to the thesis, such as unusual or uncommon but trivially implementable transactions, or types of values that require only equality to be supported (id) or that carry values that are not restricted by invariants.
+
+\subsection{Selected features}
+
+\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Feature}               & \textbf{Description}                                                                 & \textbf{Improvements}                                                                                         \\
+\hline
+                               &                                                                                      & \textbf{vs OCF}                                                                                               \\
+\hline
+\textbf{Transaction Tracing}   & A security entity that contains a sequence of transactions                           & Invariants that discard invalid or meaningless sequences of transactions                                      \\
+% Vesting System
+\hline
+\textbf{Vesting System}        & A model for composing rules of both schedule-based and event-based vesting           & Additional expressivity by allowing logical operators over vesting rules (AND, OR, NOT)                       \\
+\hline
+% Conversion mechanisms
+\textbf{Conversion Mechanisms} & A model for converting between different types of securities                         & Direct translation                                                                                            \\
+\hline
+\textbf{Basic entities}        & A model for basic entities such as securities, shareholders, and issuers (companies) & Constraints over the possible relationship graph of instances, such as requiring disjointness of certain sets \\
+\hline
+\end{tabular}
+
+Features that are left aside:
+
+\begin{tabular}[h!]{|p{5cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Feature}               & \textbf{Description}                                                                           & \textbf{Rationale}                                                                                                                                                      \\
+\hline
+% types of values that require only equality to be supported (id) are not needed - Alloy can directly refer to instances without ids, and many types can be subsumed by a single type (e.g., Address instead of a full record with all address components)
+\textbf{Types of Values}       & Types of values such as addresses, dates, and numbers                                          & Alloy can directly refer to instances without ids, and many types can be subsumed by a single type (e.g., Address instead of a full record with all address components) \\
+\hline
+\textbf{Uncommon transactions} & Some transactions in OCF which are less common, like reissuances and retractions of securities & Leaving them out simplifies our model without reducing its usefulness                                                                                                   \\
+\hline
+\end{tabular}
+
+
+\section{Implementation in Alloy}
+
+The implementation of our capitalization table model in Alloy is the focus of this section. We discuss how we translated the model into Alloy code, and provide examples of how to use Alloy to analyze the model. We also discuss the benefits and limitations of using Alloy for this type of modeling.
+
+\section{Evaluation and Testing of the Model}
+
+In the final section of this chapter, we evaluate our experience in using Alloy to model capitalization tables. We discuss the benefits and limitations of using Alloy for this type of modeling, and provide recommendations for further development and refinement of the model.
+
+What we find is that:
+
+\begin{enumerate}
+	\item The reliability of the model is much higher than that of the original OCF specification, as the model carries invariants that reject invalid transactions.
+	\item With Alloy, the resulting model can be used to characterize and check specific business cases and generate instances, greatly improving how the format can be used by practitioners via rich examples.
+	\item During the construction of the model, the understanding of the problem domain grows, because the feedback from the tool is very quick and the modeler can test assumptions.
+	\item Tests, both unitary or integrative, can be defined as checks and asserts, with useful feedback on negative cases (the model's UNSAT core, technically)
+\end{enumerate}
+
+In terms of testing, we calculate that each check and assertion, considering that Alloy allows fine control of the size of the scope as it carries a bounded model checker. This gives the following estimates as to how many instances are eliminated by each check.
+
+For example, a model that has two signatures with scope=3 has 6 bits of information, or 64 cases. But a model with 8 signatures and scope=4 has actually 32 bits, or 4 billion cases.
+
